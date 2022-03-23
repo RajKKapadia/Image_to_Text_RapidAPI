@@ -28,7 +28,7 @@ MarkupSafe==2.0.1
 matplotlib==3.3.4
 mplcursors==0.5.1
 numpy==1.19.5
-opencv-contrib-python==4.5.5.64
+opencv-contrib-python==4.2.0.32
 opencv-python==4.5.5.64
 opencv-python-headless==4.5.5.64
 packaging==21.3
