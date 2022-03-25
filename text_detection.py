@@ -1,4 +1,5 @@
 from typing import Dict, List
+import re
 
 import matplotlib.pyplot as plt
 from doctr.io import DocumentFile
@@ -39,13 +40,17 @@ def get_text_from_image(image_path: str) -> List:
             words.append(l['words'])
 
     word_lines = []
-
+    
     for word in words:
         w = ''
         for value in word:
             w += value['value']
             w += ' '
+            w = re.sub('[^A-Za-z0-9 ]+', '', w)
+            
         word_lines.append(w.strip())
+
+    word_lines = list(filter(None, word_lines))
 
     return word_lines
 
